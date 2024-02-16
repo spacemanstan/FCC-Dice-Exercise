@@ -1,1 +1,15 @@
-<p>dice-game-sim works!</p>
+<div class="dice-roller-container">
+    <span class="fa-solid fa-dice"></span>
+    <input type="number" [(ngModel)]="diceToRoll" min="1" max="10" (change)="validateDiceToRoll()" placeholder="Enter number of dice">
+    <input type="range" [(ngModel)]="diceToRoll" min="1" max="10">
+    <button (click)="rollDice()">Roll</button>
+</div>
+<div class="dice-results">
+    <div *ngFor="let result of rollResult; let i = index" class="dice-face">
+        <i [ngClass]="'fa-solid fa-dice-' + i"></i> x {{ result }}
+    </div>
+    <div>
+        <span class="fa-solid fa-dice"></span>
+        <span>total: {{ getRollSum() }}</span>
+    </div>
+</div>
