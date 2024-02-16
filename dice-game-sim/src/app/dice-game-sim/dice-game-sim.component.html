@@ -11,8 +11,8 @@
     <div *ngFor="let score of gameScores | keyvalue" class="dice-face"> <!-- Iterate over gameScores object -->
         Total {{ score.key }} occurs {{ (score.value / numSimulations) | number:'1.2-2' }} occurred {{ score.value }} times.
     </div>
-    <div>
+    <!-- <div>
         <span class="fa-solid fa-dice"></span>
         <span>total: {{ getRollSum() }}</span>
-    </div>
+    </div> -->
 </div>
