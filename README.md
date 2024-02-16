@@ -44,7 +44,8 @@ Optionally, run ng test to execute the tests.
 
 ### Improvements
 A few improvements I would have liked to have done with more time:
-- [ ] SCSS: I didn't have time to add much or any styling to make the website presentation nicer.
+- [x] SCSS: I didn't have time to add much or any styling to make the website presentation nicer.
+  - [ ] SCSS: I did manage to squeeze a little scss in at the end but it could be vastly improved
 - [ ] Error Handling: Implementing more robust error handling mechanisms, such as displaying error messages to users when they input invalid values or encounter unexpected errors.
 - [ ] Unit Tests: Expanding the test coverage to include more edge cases and scenarios to ensure the reliability and stability of the application.
 - [ ] User Input: I tried to add in a way to force a positive value for number of simulations to run but I am not confident it works or does anything lol.
