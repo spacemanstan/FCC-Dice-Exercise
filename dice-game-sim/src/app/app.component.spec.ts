@@ -1,22 +1,40 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
-describe('AppComponent', () => {
+import { DiceGameSimComponent } from './dice-game-sim/dice-game-sim.component';
+
+describe('DiceGameSimComponent', () => {
+  let component: DiceGameSimComponent;
+  let fixture: ComponentFixture<DiceGameSimComponent>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [FormsModule]
     }).compileComponents();
+
+    fixture = TestBed.createComponent(DiceGameSimComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 
-  it(`should have the 'dice-game-sim' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('dice-game-sim');
+  it('should simulate game and update gameScores', () => {
+    component.simulateGame();
+    expect(component.gameScores).toBeDefined();
+  });
+
+  it('should update total score correctly', () => {
+    component.rollResult = [1, 2, 3, 4, 5, 6]; // Sample roll result
+    const expectedTotal = component.rollResult.reduce((acc, curr) => acc + curr, 0);
+    expect(component.getRollSum()).toEqual(expectedTotal);
+  });
+
+  it('should validate number of dice to roll', () => {
+    component.diceToRoll = 0;
+    component.validateDiceToRoll();
+    expect(component.diceToRoll).toEqual(1); // Ensure it's set to minimum if below 1
   });
 });
