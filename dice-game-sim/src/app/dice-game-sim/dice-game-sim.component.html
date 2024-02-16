@@ -1,12 +1,15 @@
 <div class="dice-roller-container">
     <span class="fa-solid fa-dice"></span>
-    <input type="number" [(ngModel)]="diceToRoll" min="1" max="10" (change)="validateDiceToRoll()" placeholder="Enter number of dice">
-    <input type="range" [(ngModel)]="diceToRoll" min="1" max="10">
-    <button (click)="rollDice()">Roll</button>
+    <!-- <input type="number" [(ngModel)]="diceToRoll" min="1" max="10" (change)="validateDiceToRoll()" placeholder="Enter number of dice"> -->
+    <!-- <input type="range" [(ngModel)]="diceToRoll" min="1" max="10"> -->
+    <label for="numSimulations">Number of Simulations:</label>
+    <input type="number" [(ngModel)]="numSimulations" id="numSimulations" min="1" max="10000">
+    <input type="range" [(ngModel)]="numSimulations" min="1" max="10000">
+    <button (click)="simulateGame()">Simulate</button>
 </div>
 <div class="dice-results">
-    <div *ngFor="let result of rollResult; let i = index" class="dice-face">
-        <i [ngClass]="'fa-solid fa-dice-' + i"></i> x {{ result }}
+    <div *ngFor="let score of gameScores | keyvalue" class="dice-face"> <!-- Iterate over gameScores object -->
+        Total {{ score.key }} occurs {{ (score.value / numSimulations) | number:'1.2-2' }} occurred {{ score.value }} times.
     </div>
     <div>
         <span class="fa-solid fa-dice"></span>
