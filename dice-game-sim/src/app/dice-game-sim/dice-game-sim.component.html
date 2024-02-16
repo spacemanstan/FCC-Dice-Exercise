@@ -3,8 +3,8 @@
     <!-- <input type="number" [(ngModel)]="diceToRoll" min="1" max="10" (change)="validateDiceToRoll()" placeholder="Enter number of dice"> -->
     <!-- <input type="range" [(ngModel)]="diceToRoll" min="1" max="10"> -->
     <label for="numSimulations">Number of Simulations:</label>
-    <input type="number" [(ngModel)]="numSimulations" id="numSimulations" min="1" max="10000">
-    <input type="range" [(ngModel)]="numSimulations" min="1" max="10000">
+    <input type="number" [(ngModel)]="numSimulations" id="numSimulations" min="1" max="10000" (change)="validateDiceToRoll()">
+    <input type="range" [(ngModel)]="numSimulations" min="1" max="10000" (change)="validateDiceToRoll()">
     <button (click)="simulateGame()">Simulate</button>
 </div>
 <div class="dice-results">

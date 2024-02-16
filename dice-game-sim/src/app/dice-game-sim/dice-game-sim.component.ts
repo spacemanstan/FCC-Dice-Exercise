@@ -67,6 +67,13 @@ export class DiceGameSimComponent {
     }
   }
 
+  // this might not be working correctly
+  validateNumSims(): void {
+    if (this.numSimulations < 1) {
+      this.numSimulations = 1;
+    }
+  }
+
   // Helper function for font awesome dice icons
   getDiceIcon(index: number): string {
     switch (index) {
