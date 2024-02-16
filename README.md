@@ -6,6 +6,11 @@ This is my submission for the FCC dice assignment.
 ## Instructions
 The easiest way to view the project is to go to the live hosting of it [here](https://spacemanstan.github.io/FCC-Dice-Exercise/). However, if you wish to run the code yourself, the easiest way is to use the Angular dev environment.
 
+## Approach
+I started by making a dice roller because I panicked and was late to start, and had made a dice roller in the past. 
+I then converted the dice roller into the dice sim 
+I used angular for the project because of two advantages, I can host it using pages, and I think FCC uses Angular
+
 After you clone the project, ensure you are in the base folder and run the command:
 ```bash
 ng serve
@@ -44,6 +49,7 @@ Optionally, run ng test to execute the tests.
 
 ### Improvements
 A few improvements I would have liked to have done with more time:
+- [ ] Dice Amount: It would be cool if the user could decide the amount of dice, or even tweak the rules.
 - [x] SCSS: I didn't have time to add much or any styling to make the website presentation nicer.
   - [ ] SCSS: I did manage to squeeze a little scss in at the end but it could be vastly improved
 - [ ] Error Handling: Implementing more robust error handling mechanisms, such as displaying error messages to users when they input invalid values or encounter unexpected errors.
